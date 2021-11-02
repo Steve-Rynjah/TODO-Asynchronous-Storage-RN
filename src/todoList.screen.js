@@ -27,6 +27,15 @@ export const TodoListScreen = () => {
   useEffect(() => {
     saveTodo(todo);
   }, [todo]);
+  
+  //Sorting In Alphabetic Order
+  todo.sort(function(a,b) {
+    if(a.task.toLowerCase() < b.task.toLowerCase()) 
+      return -1;
+      if(a.task.toLowerCase() < b.task.toLowerCase()) 
+      return 1;
+      return 0
+  })
 
   const ListItem = ({ data }) => {
     return (
